@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Layout from "../core/Layout";
 import { Redirect } from "react-router-dom";
-import { signIn } from "../auth/index";
+import { signIn, authentication } from "../auth/index";
 
 const Signin = () => {
   //Creating the state
@@ -30,14 +30,13 @@ const Signin = () => {
       if (data.error) {
         setUserInfo({ ...userInfo, error: data.error, loading: false });
       } else {
-        setUserInfo({
-          ...userInfo,
-          email: "",
-          password: "",
-          error: "",
-          loading: false,
-          redirectToReferrer: true,
-        });
+        authentication(data, ()=> {
+          setUserInfo({
+            ...userInfo,
+            loading: false,
+            redirectToReferrer: true,
+          });
+        })
       }
     });
   };
@@ -113,5 +112,6 @@ const Signin = () => {
     </Layout>
   );
 };
+
 
 export default Signin;
