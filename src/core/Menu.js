@@ -25,6 +25,27 @@ const Menu = (props) => {
             Home
           </Link>
         </li>
+
+       { isLoggedIn() && isLoggedIn().user.role===0 && (<li className="nav-item">
+          <Link
+            className="nav-link"
+            style={isActive(props.history, "/user/dashboard")}
+            to="/user/dashboard"
+          >
+            Dashboard
+          </Link>
+        </li>) }
+
+        { isLoggedIn() && isLoggedIn().user.role===1 && (<li className="nav-item">
+          <Link
+            className="nav-link"
+            style={isActive(props.history, "/admin/dashboard")}
+            to="/admin/dashboard"
+          >
+            Dashboard
+          </Link>
+        </li>) }
+
       {!isLoggedIn() && <>  <li className="nav-item">
           <Link
             className="nav-link"
@@ -34,6 +55,7 @@ const Menu = (props) => {
             Signin
           </Link>
         </li>
+
         <li className="nav-item">
           <Link
             className="nav-link"
@@ -43,6 +65,7 @@ const Menu = (props) => {
             Signup
           </Link>
         </li> </> }
+
        { isLoggedIn() &&  <li className="nav-item">
           <span
             onClick={() =>

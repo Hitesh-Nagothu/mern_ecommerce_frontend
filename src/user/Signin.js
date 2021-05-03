@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Layout from "../core/Layout";
 import { Redirect } from "react-router-dom";
-import { signIn, authentication } from "../auth/index";
+import { signIn, authentication, isLoggedIn } from "../auth/index";
 
 const Signin = () => {
   //Creating the state
@@ -15,6 +15,8 @@ const Signin = () => {
 
   //Destructuing state object to store into variables
   const { email, password, error, loading, redirectToReferrer } = userInfo;
+
+  const { user} = isLoggedIn()
 
   //handler to save userInfo into state object
   const onFormChangeHandler = (name) => (event) => {
@@ -66,6 +68,14 @@ const Signin = () => {
 
   const redirectUser = () => {
     if (redirectToReferrer){
+      if (user && user.role ===1) {
+        return <Redirect to="/admin/dashboard" />
+      }
+      else {
+        return <Redirect to="/user/dashboard" />
+      }
+    }
+    if (isLoggedIn()) {
       return <Redirect to="/" />
     }
   }
