@@ -9,3 +9,8 @@ Repository focussed on building the client side application for the mern_ecommer
   *CSS
   *JavaScript
   *Bootstrap
+
+ Markup : * Bullet list
+              * Nested bullet
+                  * Sub-nested bullet etc
+          * Bullet list item 2
