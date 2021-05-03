@@ -1,16 +1,12 @@
 # mern_ecommerce_frontend
 Repository focussed on building the client side application for the mern_ecommerce_backend architecture
 
-*Technlogies:
+*Technlogies:*
 
-  *ReactJS
-  *React-Rputer
-  *HTML
-  *CSS
-  *JavaScript
-  *Bootstrap
+  1.ReactJS
+  2.React-Rputer
+  3.HTML
+  4.CSS
+  5.JavaScript
+  6.Bootstrap
 
- Markup : * Bullet list
-              * Nested bullet
-                  * Sub-nested bullet etc
-          * Bullet list item 2
