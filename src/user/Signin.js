@@ -6,7 +6,7 @@ import { signIn, authentication, isLoggedIn } from "../auth/index";
 const Signin = () => {
   //Creating the state
   const [userInfo, setUserInfo] = useState({
-    email: "venky@gmail",
+    email: "venky@gmail.com",
     password: "venky@123",
     error: "",
     loading: false,
