@@ -8,6 +8,13 @@
     -moz-animation: Gradient 15s ease infinite;
     animation: Gradient 15s ease infinite;
 }
+
+.cart-badge, .cart-badge: hover {
+    border-radius : 50%;
+    padding: 2px;
+    font-size: 12px; 
+    background: yellow;
+}
  
 @-webkit-keyframes Gradient {
     0% {
